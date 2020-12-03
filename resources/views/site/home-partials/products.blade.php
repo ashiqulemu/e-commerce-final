@@ -1,13 +1,16 @@
 @extends('site.app')
 
 @section('content')
-    @if(auth()->user())
-        @include('site.login.login-partitial.header')
-    @else
-        @include('site.home-partials.header')
-    @endif
-    @include('site.home-partials.nav-bar')
-    <div class="allProducts">
+    <div class="control_menu">
+        @if(auth()->user())
+            @include('site.login.login-partitial.header')
+        @else
+            @include('site.home-partials.header')
+        @endif
+        @include('site.home-partials.nav-bar')
+    </div>
+
+    <div class="allProducts mt-160">
         @include('site.home-partials.sidebar')
         <div class="productContainer">
             <div class="row">

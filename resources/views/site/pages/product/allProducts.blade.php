@@ -4,10 +4,12 @@
 @endsection
 
 @section('content')
+
     @if(auth()->user())
-        @include('site.login.login-partitial.header')
-        @include('site.login.login-partitial.nav')
+            @include('site.home-partials.header')
+            @include('site.home-partials.nav-bar')
     @endif
+
     @include('site.login.login-partitial.nav')
 
     <div class="container bg-white products-area regular-product  p-0 my-2" id="regularProduct">

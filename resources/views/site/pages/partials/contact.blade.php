@@ -4,14 +4,18 @@
 @endsection
 
 @section('content')
+    <div class="control_menu">
+
     @if(auth()->user())
         @include('.site.login.login-partitial.header')
     @else
         @include('.site.home-partials.header')
     @endif
     @include('.site.home-partials.nav-bar')
-    <section class="write-us">
-        <div class="container p-5 bg-white">
+
+    </div>
+    <section class="write-us mt-160">
+    <div class="container p-5 bg-white">
             <div class="row">
                 <div class="col-md-6">
                     <div class="intro">

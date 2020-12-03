@@ -41,6 +41,7 @@
 
 <div id="app" v-cloak>
 
+
     @if(session('message'))
         <div class="flash-message">
             @if(session('type')=='success')

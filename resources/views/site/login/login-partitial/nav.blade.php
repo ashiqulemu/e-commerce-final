@@ -1,14 +1,10 @@
 
 <section class="">
     <nav class="navbar navbar-expand-lg navbar-dark " id="navUser">
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#callNav"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-
-
         <div class="collapse navbar-collapse" id="callNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item  ">
@@ -27,8 +23,6 @@
                 </li>
 
             </ul>
-
-
         </div>
         {{--<search-component></search-component>--}}
     </nav>
