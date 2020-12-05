@@ -21,7 +21,7 @@
                             <i class="fa fa-cart-plus" style="font-size: 34px">
 
                             </i>
-                            <div class="counter">{{Cart::content()->count()}}</div>
+                            <div class="counter">{{Cart::count()}}</div>
                         </a>
                     </li>
 

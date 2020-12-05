@@ -75,32 +75,66 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
+        @if (isset($errors) && count($errors))
+
+            @foreach($errors->all() as $error)
+                <h6 align="center" style="color:darkred">
+                    <li>{{$error }}</li>
+                </h6>
+            @endforeach
+        @endif
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Agent</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Apply For Agent</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <form method="post" action="{{url('/apply-agent')}}">
+                @csrf
             <div class="modal-body">
                 <form>
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Name">
+                        <div class="form-group ">
+
+                            <input type="text" class="form-control @error('sign_username') is-invalid
+                                       @enderror" name="sign_username" value="{{ old('sign_username') }}"
+                                   required placeholder="Name">
+
+                            @error('sign_username')
+                            <div class="invalid-feedback text-right" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" class="form-control @error('sign_email') is-invalid
+                                       @enderror" name="sign_email" value="{{ old('sign_email') }}"
+                               required autocomplete="sign_email" placeholder="E-mail Address">
+                        @error('sign_email')
+                        <div class="invalid-feedback text-right" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @enderror
+
                     </div>
                     <div class="form-group">
                         <label>Phone</label>
-                        <input type="number" class="form-control" placeholder="phone">
+                        <input type="number" class="form-control" placeholder="phone" name="mobile" required>
                     </div>
 
-                    <div class="form-group">
-                        <label>Address</label>
-                        <textarea class="form-control" rows="3" cols="5"></textarea>
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<label>Address</label>--}}
+                        {{--<textarea class="form-control" rows="3" cols="5" required></textarea>--}}
+                    {{--</div>--}}
 
                     <button type="submit" class="btn btn-primary float-right">Add Agent</button>
                 </form>
             </div>
+            </form>
             <div class="modal-footer">  </div>
         </div>
     </div>

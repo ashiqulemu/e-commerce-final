@@ -105,6 +105,66 @@ class CartController extends Controller
             'message'=>'Product added to your cart successfully.']);
     }
 
+
+    public function addCart(Request $request){
+        $product=Product::find($request->id);
+
+        $currentQuantity = 0;
+        $currentCartProduct= Cart::search(function ($cartItem, $rowId) use ($product){
+            return $cartItem->id === $product->id ;
+        });
+        foreach($currentCartProduct as $item) {
+            $currentQuantity += (int)str_replace(",","",$item->qty);
+
+        }
+
+        if (($request->qty + $currentQuantity) > $product->quantity ){
+            return redirect()->back()
+                ->with(['type'=>'error',
+                    'message'=>'Product you have selected which we have left '. $product->quantity .' quantity only.']);
+        }
+
+        if($request->source){
+            $currentCartItem= Cart::search(function ($cartItem, $rowId) use ($product){
+                return $cartItem->id === $product->id;
+            });
+
+        }
+
+        if( auth()->user() && auth()->user()->role=="agent")
+        {
+            $price = $request->price;
+
+            $pro=(double)$product->agent_price;
+
+        }
+        else{
+
+            $price = $request->price;
+            $pro=(double)$product->price;
+
+        }
+        $source = $request->source;
+
+        $add=  Cart::add([
+            'id' => $product->id,
+            'name' => $product->name,
+            'qty' => $request->qty,
+            'price' => $price ? $price : $pro,
+            'weight'=>5,
+            'options' => [
+                'source' => $source ? $source : 'product',
+                'source_id' => $request->source_id,
+            ]
+        ]);
+
+//        $amount=Cart::subtotal();
+
+        $message=Cart::count();
+        return response()->json($message);
+    }
+
+
     public function deleteCartItem(Request $request,$id){
         Cart::remove($id);
         return back();

@@ -1,26 +1,6 @@
 <section class="site-header">
     @if(!auth()->user())
-    {{--<div class="topbar">--}}
-        {{--<div class="barInner">--}}
-            {{--<div class="items">--}}
-                {{--<i class="fa fa-envelope-o" aria-hidden="true"></i> admin@admin.com--}}
-            {{--</div>--}}
-            {{--<div class="items">--}}
-                {{--<div><i class="fa fa-phone"></i> +880 1723096437</div>--}}
-                {{--<div class="social">--}}
-                    {{--<a href="#"> <i class="fa fa-facebook"></i> </a>--}}
-                    {{--<a href="#"> <i class="fa fa-twitter"></i> </a>--}}
-                    {{--<a href="#"> <i class="fa fa-youtube"></i> </a>--}}
-                    {{--<a href="#"> <i class="fa fa-pinterest"></i> </a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="items">--}}
-                {{--<a href="{{url('/register')}}" class="theme-link"> <i class="fa fa-user"></i> Sign Up </a>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
-    <div class="others">
+        <div class="others">
         <div class="brand">
             <a href="/">
                 <img class='img-fluid' src="/images/home/khaasfood.png" alt="logo" style="max-width: 80%;">
@@ -109,7 +89,7 @@
                     <div class="mb-3 homeCart mt-3">
                         <a href="/view-cart" title="view shopping cart" class="shoppingCart">
                             <i class="fa fa-cart-arrow-down"  ></i>
-                            <div class="counter">{{Cart::content()->count()}}</div>
+                            <div class="counter">{{Cart::count()}}</div>
                         </a>
                     </div>
 

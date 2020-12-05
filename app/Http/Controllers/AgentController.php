@@ -22,6 +22,7 @@ class AgentController extends Controller
         $agent=DB::table('users')
             ->select('*')
             ->where('role','=','agent')
+            ->where('is_active','=',1)
             ->get();
 
         return view('admin.pages.agent.manage',['agent'=>$agent]);
@@ -117,9 +118,14 @@ class AgentController extends Controller
         $user->mobile = $request->mobile;
         $user->role ='agent';
         $user->save();
-
-        return redirect('/admin/agent')
-            ->with(['type'=>'success','message'=>'Agent information Updated Successfully']);
+        if($user->is_active==1) {
+            return redirect('/admin/agent')
+                ->with(['type' => 'success', 'message' => 'Agent information Updated Successfully']);
+        }
+        else{
+            return redirect('/admin/newAgent')
+                ->with(['type' => 'success', 'message' => 'Agent information Updated Successfully']);
+        }
     }
 
     /**
@@ -139,10 +145,12 @@ class AgentController extends Controller
     {
         $inc=User::find($id);
 
-        $inc->is_active=1;
-        $inc->save();
-        return redirect('/admin/agent')
-            ->with(['type'=>'success','message'=>'Customer has been made Activate']);
+            $inc->is_active = 1;
+            $inc->save();
+            return redirect('/admin/newAgent')
+                ->with(['type' => 'success', 'message' => 'Account has been made Activated']);
+
+
     }
     public function inactive($id)
     {
@@ -152,6 +160,52 @@ class AgentController extends Controller
         $inc->save();
         return redirect('/admin/agent')
             ->with(['type'=>'success','message'=>'Agent has been made inactive']);
+
+    }
+
+    public function applyAgent(Request $request)
+    {
+
+        $request->validate([
+
+            'sign_username' => 'required|string|max:100|unique:users,username',
+            'sign_email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+
+        ]);
+
+
+        $user = new User();
+        $user->name = $request->sign_username;
+        $user->username = $request->sign_email;
+        $user->email= $request->sign_email;
+        $user->password = Hash::make(123123);
+        $user->mobile = $request->mobile;
+        $user->credit_balance = 0;
+        $user->singUp_credit = 0;
+        $user->is_active =0;
+        $user->role ='agent';
+        $user->save();
+
+
+//        $mailData = [
+//            'name' => $data['sign_username'],
+//        ];
+//        $this->sendEmail('email.email-welcome',$mailData ,'Welcome to adi.com.bd', $data['sign_email']);
+//        return  $user;
+        return redirect()->back()
+            ->with(['type'=>'success','message'=>'Your request has been submitted successfully. Your account will be activated within 48 hours ']);
+    }
+
+    public function newAgent()
+    {
+        $agent=DB::table('users')
+            ->select('*')
+            ->where('role','=','agent')
+            ->where('is_active','=',0)
+            ->orderBy('id','desc')
+            ->get();
+
+        return view('admin.pages.agent.newlist',['agent'=>$agent]);
 
     }
 }

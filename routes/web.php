@@ -11,6 +11,8 @@ Route::middleware(['init'])->group(function () {
     Route::get('subsub-pro/{id}', 'ProductController@subsubProduct');
 
     Route::post('add-to-cart','CartController@addToCart');
+    Route::post('add-cart','CartController@addCart');
+    Route::post('apply-agent','AgentController@applyAgent');
     Route::get('/delete/cart-item/{id}','CartController@deleteCartItem');
     Route::get('/update/cart-item/{id}/{quantity}','CartController@updateCartItem');
 
