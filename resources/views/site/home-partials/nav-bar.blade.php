@@ -30,9 +30,15 @@
             </li>
         </ul>
         <ul class="navbar-nav custom ml-auto">
+            @if(auth()->user())
             <li class="nav-item">
-                <a class="nav-link active" href="/">Home </a>
+                <a class="nav-link active" href="{{url('/user-home')}}">Home </a>
             </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{url('/')}}">Home </a>
+                </li>
+            @endif
             <li class="nav-item">
                 <a class="nav-link " href="{{url('/all-products')}}">All product </a>
             </li>
@@ -56,10 +62,11 @@
             <li class="nav-item">
                 <a class="nav-link"  href="{{url('/contact')}}">Contact Us</a>
             </li>
+            @if(!auth()->user())
             <li class="nav-item">
                 <a class="nav-link"  href="" data-toggle="modal" data-target="#myModal">Agent</a>
             </li>
-
+            @endif
             @if(!auth()->user())
             <li class="nav-item">
                 <a class="nav-link"  href="{{url('/check-order')}}">Check Order Status</a>

@@ -14,6 +14,9 @@
                     <li>
                         <a href="{{url('/admin/agent')}}">Manage Agent</a>
                     </li>
+                    <li>
+                        <a href="{{url('/admin/newAgent')}}">New Agent Activate</a>
+                    </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>

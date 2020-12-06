@@ -21,31 +21,63 @@ class UserHomeController extends Controller
     use  Districts;
     public function index()
     {
-        if(!auth()->user()){
-            return redirect('/login');
+//        if(!auth()->user()){
+////            return redirect('/login');
+////        }
+////
+////        $productList=DB::table('products')
+////            ->select('*')
+////            ->where('quantity','>', 0)
+////            ->where('status','=',1)
+////            ->paginate(20);
+////
+////
+////        $categories=DB::table('categories')
+////            ->select('*')
+////            ->where('status','=','Active')
+////            ->get();
+////
+////        $subcat=DB::table('subcats')
+////            ->select('id','name','category_id')
+////            ->get();
+////        $subsub=DB::table('subsubs')
+////            ->select('*')
+////            ->get();
+////
+//////        return view('site.pages.product.allProducts',['categories'=>$categories,'productList'=>$productList]);
+////        return view('site.pages.home',['categories'=>$categories,'productList'=>$productList,'subcat'=>$subcat,'subsub'=>$subsub]);
+///
+
+        if(request()->input('ref')) {
+            Session::put('ref', request()->input('ref'));
         }
 
-        $productList=DB::table('products')
+
+        $latest=DB::table('products')
             ->select('*')
-            ->where('quantity','>', 0)
+            ->where('status','=',1 )
+            ->where('quantity','>',1)
+            ->latest()->take(8)->get();
+
+        $favorite=DB::table('products')
+            ->select('*')
+            ->where('status','=',1 )
+            ->where('quantity','>',1)
+            ->where('popular','=',1)->take(8)->get();
+        $category=DB::table('categories')
+            ->select('*')
             ->where('status','=',1)
-            ->paginate(20);
-
-
-        $categories=DB::table('categories')
-            ->select('*')
-            ->where('status','=','Active')
+            ->latest()
+            ->take(6)
             ->get();
 
-        $subcat=DB::table('subcats')
-            ->select('id','name','category_id')
-            ->get();
-        $subsub=DB::table('subsubs')
-            ->select('*')
-            ->get();
 
-//        return view('site.pages.product.allProducts',['categories'=>$categories,'productList'=>$productList]);
-        return view('site.home-partials.products',['categories'=>$categories,'productList'=>$productList,'subcat'=>$subcat,'subsub'=>$subsub]);
+        return view('site.pages.home',[
+
+            'latest'=>$latest,
+            'category'=>$category,
+            'popular'=> $favorite,
+        ]);
 
     }
 

@@ -5,7 +5,11 @@
 
 @section('content')
     <div class="control_menu">
-        @include('site.home-partials.header')
+        @if(auth()->user())
+            @include('site.login.login-partitial.header')
+        @else
+            @include('site.home-partials.header')
+        @endif
         @include('site.home-partials.nav-bar')
     </div>
     @include('site.home-partials.banner')

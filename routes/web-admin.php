@@ -22,6 +22,7 @@ Route::middleware(['adminAuth'])->group(function () {
     Route::resource('delivery','DeliverydateController');
     Route::get('/customer/active/{id}','CustomerController@active');
     Route::get('/customer/inactive/{id}','CustomerController@inactive');
+    Route::get('/newAgent','AgentController@newAgent');
     Route::get('/agent/active/{id}','AgentController@active');
     Route::get('/agent/inactive/{id}','AgentController@inactive');
     Route::get('/show-product/{id}','ProductController@showProduct');

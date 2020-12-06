@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <p class="pageTitle">
-                    <i class="fa fa-cogs"></i>  manage agent
+                    <i class="fa fa-cogs"></i>  manage agent application
                 </p>
             </div>
             <div class="col-md-12 ">
@@ -33,8 +33,8 @@
                                 <td>
                                     <div>
                                         @if($agent[$key]->is_active==0)
-                                            <a href="{{url('/admin/agent/active/'.$agent[$key]->id)}}" title="Inactive">
-                                                <i class="fa fa-arrow-circle-down"></i>
+                                            <a href="{{url('/admin/agent/active/'.$agent[$key]->id)}}" title="Activate">
+                                                <i class="fa fa-arrow-circle-up"></i>
                                             </a>
                                         @else
                                             <a href="{{url('/admin/agent/inactive/'.$agent[$key]->id)}}" title="Inactive">

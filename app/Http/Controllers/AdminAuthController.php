@@ -12,7 +12,7 @@ class AdminAuthController extends Controller
 {
     use RegistersUsers;
 
-    protected $redirectTo = '/user-home';
+    protected $redirectTo = '/';
 
 
     public function login () {
