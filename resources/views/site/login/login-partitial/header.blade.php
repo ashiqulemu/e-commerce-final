@@ -1,12 +1,12 @@
-
-
-
 <section class="loged-header">
     <div class="container">
         <div class="header">
             <div>
-                <div class=" text-center">
-                    <a href="{{url('/user-home')}}"><img src="/images/home/khaasfood.png" class="img-fluid" style="width:200px"></a>
+                <div class="text-center">
+                    <a href="{{url('/user-home')}}">
+                        <img src="/images/home/khaasfood.png" class="img-fluid" style="width:200px">
+                    </a>
+
                 </div>
             </div>
             <div>

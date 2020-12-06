@@ -23,6 +23,11 @@ $theme-primary: #139200;
     z-index: 999;
     top: 0;
   }
+  @media(max-width:768px ){
+    position: sticky;
+    z-index: 999;
+    top: -190px;
+  }
 }
 
 .navbar {

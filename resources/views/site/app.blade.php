@@ -109,11 +109,7 @@
 
 <script src="{{mix('js/app.js')}}"></script>
 
-{{--<script src="{{asset('js/smoothproducts.min.js')}}"></script>--}}
-
-
 @yield('scripts')
-
 
 {{--<script src="{{asset('js/zoom-image.js')}}"></script>--}}
 <script src="{{asset('js/main.js')}}"></script>

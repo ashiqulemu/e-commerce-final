@@ -1,28 +1,28 @@
 
-.allProducts{
+.allProducts {
   display: flex;
   flex-wrap: wrap;
-  .sidebar{
+  .sidebar {
     flex-basis: 250px;
     background: #fff;
     overflow-y: hidden;
-    @media(max-width:600px){
+    @media(max-width: 600px) {
       position: fixed;
-      z-index: 1;
       top: 0;
       left: -230px;
       right: 150px;
       width: 230px;
       bottom: 0;
+      z-index: 10000;
       overflow-y: unset;
-      &.open{
+      &.open {
         left: 0;
         transition: left 0.6s ease-in-out;
       }
     }
-    .mobileBox{
+    .mobileBox {
       display: none;
-      @media(max-width:768px){
+      @media(max-width: 768px) {
         position: absolute;
         right: 0;
         background: #101010d1;
@@ -35,35 +35,35 @@
       }
     }
   }
-  .productContainer{
+  .productContainer {
     padding: 15px;
     background: #F2F2F2;
-    flex: 1 ;
-    .product{
+    flex: 1;
+    .product {
       max-width: 300px;
-      @media(max-width:768px){
+      @media(max-width: 768px) {
         max-width: 100%;
       }
     }
   }
 }
 
-.menuItems{
+.menuItems {
   margin: 0;
   list-style: none;
   background: #343a41;
   max-width: 315px;
-  .list{
+  .list {
 
-    &:hover{
+    &:hover {
       cursor: pointer;
-      a{
+      a {
         background: #CDDC39;
         color: #000;
       }
     }
 
-    a{
+    a {
       text-decoration: none;
       padding: 9px 15px;
       background: #343a41;
@@ -72,43 +72,43 @@
       color: #9ca91c;
       border-bottom: 1px solid #4e4e4e;
 
-      &:focus{
-        background:#282e35;
+      &:focus {
+        background: #282e35;
       }
     }
-    .multilevel{
+    .multilevel {
       position: relative;
 
-      .aero{
+      .aero {
         position: absolute;
         right: 15px;
         top: 13px;
-        &.active{
+        &.active {
           transform: rotate(90deg);
         }
       }
     }
-    .subItems{
+    .subItems {
       display: none;
-      &.active{
+      &.active {
         display: block;
 
-        li ul.subItems{
-            li{
-              a{
-                padding-left: 49px;
-                &:hover{
-                  background: #232323;
-                }
+        li ul.subItems {
+          li {
+            a {
+              padding-left: 49px;
+              &:hover {
+                background: #232323;
               }
             }
+          }
 
         }
 
-        a.multilevel{
+        a.multilevel {
           text-decoration: none;
           position: relative;
-          &:before{
+          &:before {
             content: "\203A";
             position: absolute;
             left: 25px;
@@ -117,7 +117,7 @@
           }
         }
       }
-      a{
+      a {
         padding-left: 35px;
         background: #343a41;
         display: block;
@@ -129,13 +129,6 @@
   }
 
 }
-
-
-
-
-
-
-
 
 //
 //.sp-wrap {

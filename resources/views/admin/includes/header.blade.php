@@ -28,6 +28,7 @@
         <a href="{{url('/admin/dashboard')}}">
             <img src="/images/home/khaasfood.png" style="height: 70px;    width: auto;    padding: 8px;" alt="" class="brand-logo">
         </a>
+
     </div>
     <!-- /.navbar-header -->
 

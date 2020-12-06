@@ -69,10 +69,12 @@
 
 
     </div>
-    <script>
-        function allProducts(){
-          document.getElementById("sidebar").classList.toggle('open');
-          document.getElementById("mobileBox").style.display='block';
-        }
-    </script>
+
 </nav>
+
+<script>
+    function allProducts(){
+        document.getElementById("sidebar").classList.toggle('open');
+        document.getElementById("mobileBox").style.display='block';
+    }
+</script>

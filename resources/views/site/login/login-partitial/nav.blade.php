@@ -24,6 +24,6 @@
 
             </ul>
         </div>
-        {{--<search-component></search-component>--}}
+
     </nav>
 </section>
