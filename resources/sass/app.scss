@@ -35,10 +35,10 @@ body {
 }
 #mdBlock{
   @media(max-width: 768px){
-    display: none;
     &.open{
       display: block!important;
     }
+    display: none;
   }
 }
 
