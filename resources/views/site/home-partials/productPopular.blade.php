@@ -22,14 +22,15 @@
                                 </div>
                                 <div class="addCart">
                                     <a class="details" href="{{url('product/details/'.$lat->id).'/'.$lat->name}}">Details</a>
-                                    <form method="post" action="{{url('/add-to-cart')}}">
-                                        @csrf
+                                    {{--<form method="post" action="{{url('/add-to-cart')}}">--}}
+                                        {{--@csrf--}}
 
-                                        <input type="hidden" name="qty" min="1" value="1">
-                                        <input type="hidden" name="id" value="{{$lat->id}}">
-                                        <button class="basket"><i class="fa fa-plus"> </i> basket</button>
-                                    </form>
-
+                                        {{--<input type="hidden" name="qty" min="1" value="1">--}}
+                                        {{--<input type="hidden" name="id" value="{{$lat->id}}">--}}
+                                        {{--<button class="basket"><i class="fa fa-plus"> </i> basket</button>--}}
+                                    {{--</form>--}}
+                                    <input type="hidden" name="qty" id="qty" min="1" value="1">
+                                    <button class="basket"  onclick="submit({{$lat->id}})"><i class="fa fa-plus"> </i> basket</button>
                                 </div>
                             </div>
                         </div>

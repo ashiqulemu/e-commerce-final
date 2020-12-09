@@ -90,7 +90,7 @@
                     <div class="mb-3 homeCart mt-3">
                         <a href="/view-cart" title="view shopping cart" class="shoppingCart">
                             <i class="fa fa-cart-arrow-down"  ></i>
-                            <div class="counter">{{Cart::content()->count()}}</div>
+                            <div class="counter" id="counter">{{Cart::count()}}</div>
                         </a>
                     </div>
 
