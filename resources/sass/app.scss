@@ -175,6 +175,9 @@ body {
 
 .navbar-nav {
   &.custom {
+    @media(max-width:768px){
+      margin-top: 15px;
+    }
     .nav-item {
       .nav-link {
         margin: 0 9px;

@@ -7,6 +7,7 @@ $theme-primary: #139200;
 
 .customToggleCategories{
   display: none;
+  cursor: pointer;
   @media(max-width:600px){
     display: block;
     color: #cddc39;

@@ -171,6 +171,7 @@
                 </div>
             </div>
             <hr>
+            <span class="customToggleCategories btn btn-sm btn-dark" onclick="allProductsForAll();">all categories</span>
             <div class="row mt-5 mobile">
                 @foreach($productList as $product)
                     <div class="col d-flex">
@@ -214,6 +215,10 @@
         function setSearchLink() {
             var val = $('#searchProduct').val()
             $('#searchLink').attr('href', '/all-products?search=' + val)
+        }
+        function allProductsForAll(){
+            document.getElementById("sidebar").classList.toggle('open');
+            document.getElementById("mobileBox").style.display='block';
         }
 
     </script>
