@@ -37,7 +37,7 @@
         }
     </script>
 </head>
-<body>
+<body onscroll="checkScroll();">
 
 <div id="app" v-cloak>
 
@@ -149,7 +149,20 @@
 <script src="{{asset('js/main.js')}}"></script>
 <script src="{{asset('js/wow.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
+<script>
+    function checkScroll(){
+        if(window.scrollY>150){
+           const  item =  document.querySelector('.homeCart');
+                item.classList.add('take_position');
+        }
+        if(window.scrollY<150){
+            const  removeitem =  document.querySelector('.homeCart');
+            removeitem.classList.remove('take_position');
+        }
 
+
+    }
+</script>
 
 </body>
 </html>

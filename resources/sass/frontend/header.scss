@@ -268,7 +268,8 @@ $theme-primary: #139200;
     }
     .cart {
       flex: 1;
-      transform: translateY(-16px);
+      //transform: translateY(-16px);
+      z-index: 11;
     }
   }
 

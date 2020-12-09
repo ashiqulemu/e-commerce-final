@@ -162,7 +162,7 @@
         @include('site.home-partials.nav-bar')
     </div>
 
-    <div class="allProducts mt-160">
+    <div class="allProducts">
         @include('site.home-partials.sidebar')
         <div class="productContainer">
             <div class="row">

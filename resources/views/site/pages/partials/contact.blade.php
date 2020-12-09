@@ -14,7 +14,7 @@
     @include('.site.home-partials.nav-bar')
 
     </div>
-    <section class="write-us mt-160">
+    <section class="write-us">
     <div class="container p-5 bg-white">
             <div class="row">
                 <div class="col-md-6">

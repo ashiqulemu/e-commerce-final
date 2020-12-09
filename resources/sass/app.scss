@@ -22,6 +22,19 @@ body {
   font-family: 'Poppins-Regular', sans-serif !important;
 }
 
+
+.take_position{
+  position: fixed;
+  top: 45px;
+  z-index: 2500;
+  right: 0;
+  background: #2e2f25;
+  padding: 18px;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border: 1px solid #CDDC39;
+}
+
 #loginBtn{
   padding: 3px 10px;
   background: #343a41;
@@ -616,12 +629,12 @@ body {
 }
 
 .banner {
-   @media(min-width:768px){
-    margin-top: 159px;
-  }
-  @media(max-width:768px){
-    margin-top: unset;
-  }
+  // @media(min-width:768px){
+  //  margin-top: 159px;
+  //}
+  //@media(max-width:768px){
+  //  margin-top: unset;
+  //}
 }
 
 .searchBar {
@@ -1085,7 +1098,8 @@ input[type=number]::-webkit-outer-spin-button {
 .buttonSection {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   .confirmPay {
     &.shopping {
       background: #70a354;
@@ -1108,7 +1122,6 @@ input[type=number]::-webkit-outer-spin-button {
     border: 1px solid #b7b7b7;
     line-height: 1.5;
     border-radius: 4px;
-    width: 100%;
     margin: 6px 2px;
     background: #b1b12b;
     box-shadow: 0 2px 4px #808080d4;
