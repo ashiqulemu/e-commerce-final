@@ -15,23 +15,26 @@ $theme-primary: #139200;
   }
 }
 
-.control_menu{
-  @media(min-width:769px ){
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    top: 0;
-  }
-  @media(max-width:768px ){
-    position: sticky;
-    z-index: 999;
-    top: -194px;
-  }
-}
+//.control_menu{
+//  @media(min-width:769px ){
+//    position: fixed;
+//    right: 0;
+//    left: 0;
+//    z-index: 999;
+//    top: 0;
+//  }
+//  @media(max-width:768px ){
+//    position: sticky;
+//    z-index: 999;
+//    top: -194px;
+//  }
+//}
 
 .navbar {
   padding: 0.2rem 11px!important;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .userNavigation{

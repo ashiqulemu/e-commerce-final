@@ -4,14 +4,14 @@
 @endsection
 
 @section('content')
-    <div class="control_menu">
+
         @if(auth()->user())
             @include('site.login.login-partitial.header')
         @else
             @include('site.home-partials.header')
         @endif
         @include('site.home-partials.nav-bar')
-    </div>
+
     @include('site.home-partials.banner')
     @include('site.home-partials.advertisement')
     @include('site.home-partials.productNewArrival')
