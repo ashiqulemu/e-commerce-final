@@ -280,7 +280,7 @@
                                     <div class="swiper-slide">
                                         <div class="product">
                                             <div class="photo">
-                                                <img src="{{asset("images/products/$rel->product_image")}}" alt="">
+                                               <a href="{{url('product/details/'.$rel->id).'/'.$rel->name}}"> <img src="{{asset("images/products/$rel->product_image")}}" alt=""></a>
                                             </div>
                                             <div class="base">
                                                 <p class="title">{{$rel->name}}</p>
