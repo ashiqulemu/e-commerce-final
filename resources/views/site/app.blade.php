@@ -160,8 +160,8 @@
             removeitem.classList.remove('take_position');
         }
 
-
     }
+
 </script>
 
 </body>

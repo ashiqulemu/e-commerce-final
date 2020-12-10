@@ -37,6 +37,9 @@ const app = new Vue({
     },
 
     mounted() {
+
+
+
         var Swipes = new Swiper('.swiper-container', {
             slidesPerView: 5,
             loopedSlides:1,
@@ -100,6 +103,8 @@ const app = new Vue({
     },
 
     methods: {
+
+
 
         openSidebar(){
             let sidebar = document.getElementById("sidebar");

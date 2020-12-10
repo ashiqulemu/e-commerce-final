@@ -1,7 +1,7 @@
 @extends('site.app')
 
 @section('content')
-    <div class="control_menu">
+
         @if(auth()->user())
             <section class="loged-header">
                 <div class="container">
@@ -160,7 +160,7 @@
             </section>
         @endif
         @include('site.home-partials.nav-bar')
-    </div>
+
 
     <div class="allProducts">
         @include('site.home-partials.sidebar')
@@ -171,7 +171,9 @@
                 </div>
             </div>
             <hr>
-            <span class="customToggleCategories btn btn-sm btn-dark" onclick="allProductsForAll();">all categories</span>
+            <span class="customToggleCategories btn btn-sm btn-dark" onclick="allProducts();">
+                all categories
+            </span>
             <div class="row mt-5 mobile">
                 @foreach($productList as $product)
                     <div class="col d-flex">
@@ -216,7 +218,7 @@
             var val = $('#searchProduct').val()
             $('#searchLink').attr('href', '/all-products?search=' + val)
         }
-        function allProductsForAll(){
+        function allProducts(){
             document.getElementById("sidebar").classList.toggle('open');
             document.getElementById("mobileBox").style.display='block';
         }

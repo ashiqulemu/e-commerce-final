@@ -21,11 +21,14 @@
 body {
   font-family: 'Poppins-Regular', sans-serif !important;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 
 .take_position{
   position: fixed;
-  top: 45px;
+  top: 15%;
   z-index: 2500;
   right: 0;
   background: #2e2f25;

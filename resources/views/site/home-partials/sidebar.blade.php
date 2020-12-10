@@ -12,7 +12,7 @@
 
                     </a>
                 @else
-                    <a  class="multilevel" onClick="dropdown(event)" onmouseover="dropdown(event)">
+                    <a  class="multilevel" onClick="dropdown(event)">
                         {{$category->name}}
 
                         <i class="fa fa-caret-right aero"></i>
@@ -26,7 +26,7 @@
                                 @if($category->cat_order =="sub-category")
                                     <a href="{{url('subcat-pro/'.$subc->id)}}"> {{$subc->name}}</a>
                                 @else
-                                    <a  class="multilevel" onClick="dropdown(event)" onmouseover="dropdown(event)"> {{$subc->name}}</a>
+                                    <a  class="multilevel" onClick="dropdown(event)"> {{$subc->name}}</a>
                                 @endif
                                 <ul class="subItems">
                                     @foreach($subsub as $sub)
@@ -53,9 +53,11 @@
     </ul>
 
 </div>
-<script>
-    function dropdown(event) {
-        event.target.nextElementSibling.classList.toggle('active');
-        event.target.children[0].classList.toggle('active');
-    }
-</script>
+
+
+    <script type="text/javascript">
+        function dropdown(event) {
+            event.target.nextElementSibling.classList.toggle('active');
+            event.target.children[0].classList.toggle('active');
+        }
+    </script>

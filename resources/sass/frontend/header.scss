@@ -8,12 +8,22 @@ $theme-primary: #139200;
 .customToggleCategories{
   display: none;
   cursor: pointer;
+  border: 1px solid #cddc39;
+  padding: 4px 11px;
+  border-radius: 5px;
+  background: linear-gradient(-87deg, #d0f500, #f9e819);
+  color: #1e1e1e;
+  font-weight: 600;
   @media(max-width:600px){
     display: block;
-    color: #cddc39;
     text-transform: capitalize;
     cursor: pointer;
+    &:hover{
+      color: #4e4c4c;
+      background: #FFC107;
+    }
   }
+
 }
 
 //.control_menu{
@@ -35,7 +45,7 @@ $theme-primary: #139200;
   padding: 0.2rem 11px!important;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
 }
 
 .userNavigation{
@@ -270,7 +280,7 @@ $theme-primary: #139200;
     .cart {
       flex: 1;
       //transform: translateY(-16px);
-      z-index: 11;
+      z-index: 21;
     }
   }
 
