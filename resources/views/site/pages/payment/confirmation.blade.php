@@ -73,23 +73,22 @@
                         </div>
                         <div class="form-group">
                             <label for=""> City <span class="text-danger">*</span> </label>
-                            <input type="text"
+                            <input type="text" class="form-control"
                                    name="city"
-                                   required
                                    value="{{ old('city', $user->contact ? $user->contact->city : '') }}"
                                    class="form-control"
-                                   placeholder="City name">
+                                   placeholder="City name"  required>
                             @if ($errors->has('city'))
                                 <div class="error">{{ $errors->first('city') }}</div>
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for=""> Post Code</label>
-                            <input type="number"
+                            <label for=""> Post Codehgfdhgf</label>
+                            <input type="number" class="form-control"
                                    name="post_code"
                                    value="{{ old('post_code', $user->contact ? $user->contact->post_code : '') }}"
                                    class="form-control"
-                                   placeholder="Post Code">
+                                   placeholder="Post Code" required>
                         </div>
                     </div>
 

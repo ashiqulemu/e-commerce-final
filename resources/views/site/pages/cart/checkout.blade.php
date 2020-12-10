@@ -61,15 +61,15 @@
                             </div>
                             <div class="form-group">
                                 <label for=""> City <span class="text-danger">*</span></label>
-                                <input type="text" name="city" required="required"
-                                       value="@if(auth()->user()){{ old('city', $user->contact ? $user->contact->city : '') }}@endif " placeholder="City name"
-                                       class="form-control">
+                                <input type="text" name="city"
+                                       placeholder="City name"
+                                       class="form-control" required>
                             </div>
                             <div class="form-group"><label for=""> Post Code</label>
                                 <input type="number" name="post_code"
                                        value="@if(auth()->user()) {{ old('post_code', $user->contact ? $user->contact->post_code : '') }}@endif"
                                        placeholder="Post Code"
-                                       class="form-control"></div>
+                                       class="form-control" required></div>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -118,11 +118,11 @@
                                     <p class="font-weight-bold"><span>Product</span>
                                         <span>Quantity</span> <span>Total</span>
                                     </p>
+                                    @foreach($cartItems as $item)
                                     <p>
-                                        @foreach($cartItems as $item)
-                                            <span>{{$count}}. {{$item->name}}</span>
+                                        <span>{{$count}}. {{$item->name}}</span>
                                             <span>{{$item->qty}}</span>
-                                            <span>{{$setting->amount_sign}}{{$item->price}}</span>
+                                            <span>{{$item->price}}</span>
                                     </p>
                                     @php
                                         $count++;
