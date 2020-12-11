@@ -218,6 +218,7 @@
             var val = $('#searchProduct').val()
             $('#searchLink').attr('href', '/all-products?search=' + val)
         }
+
         function allProducts(){
             document.getElementById("sidebar").classList.toggle('open');
             document.getElementById("mobileBox").style.display='block';

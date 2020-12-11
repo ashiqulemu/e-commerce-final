@@ -12,7 +12,7 @@
     @include('.site.home-partials.nav-bar')
     <div class="container bg-white aboutUS">
 
-        <div class="row p-5 header">
+        <div class="row p-5 header shadow-sm ">
             <h1>About us </h1>
             <h4> Subtitle goes here !</h4>
             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est eveniet id quaerat temporibus. Est
@@ -32,9 +32,12 @@
         </div>
     </div>
 
+
 @endsection
 
 
 
 @section('scripts')
+
+
 @endsection

@@ -4,7 +4,6 @@
 @endsection
 
 @section('content')
-    <div class="control_menu">
 
     @if(auth()->user())
         @include('.site.login.login-partitial.header')
@@ -12,11 +11,9 @@
         @include('.site.home-partials.header')
     @endif
     @include('.site.home-partials.nav-bar')
-
-    </div>
     <section class="write-us">
-    <div class="container p-5 bg-white">
-            <div class="row">
+    <div class="container  ">
+            <div class="row  p-5 shadow-sm ">
                 <div class="col-md-6">
                     <div class="intro">
                         <h2>Write Us</h2>

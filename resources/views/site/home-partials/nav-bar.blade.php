@@ -5,9 +5,8 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <span class="customToggleCategories" onclick="allProducts();">all categories</span>
-
-
+    <a href='/all-products'class="customToggleCategories" >all products</a>
+    {{--onclick="allProducts();--}}
 
     <div class="collapse navbar-collapse" id="callNav">
 

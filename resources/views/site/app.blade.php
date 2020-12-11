@@ -18,22 +18,22 @@
         window.serverTime = "{{ $serverTime }}";
         window.auth = "{{request()->user()}}";
         window.currentPath = "{{request()->path()}}";
-        window.allAuctionSetTimout=[];
-        window.timeZone="{{$timeZone}}";
+        window.allAuctionSetTimout = [];
+        window.timeZone = "{{$timeZone}}";
     </script>
 
     <script type="text/javascript">
         // Get rid of the Facebook residue hash in the URI
         // Must be done in JS cuz hash only exists client-side
         // IE and Chrome version of the hack
-        if (String(window.location.hash).substring(0,1) == "#") {
+        if (String(window.location.hash).substring(0, 1) == "#") {
             window.location.hash = "";
-            window.location.href=window.location.href.slice(0, -1);
+            window.location.href = window.location.href.slice(0, -1);
         }
         // Firefox version of the hack
-        if (String(location.hash).substring(0,1) == "#") {
+        if (String(location.hash).substring(0, 1) == "#") {
             location.hash = "";
-            location.href=location.href.substring(0,location.href.length-3);
+            location.href = location.href.substring(0, location.href.length - 3);
         }
     </script>
 </head>
@@ -92,8 +92,8 @@
             </div>
             <form method="post" action="{{url('/apply-agent')}}">
                 @csrf
-            <div class="modal-body">
-                <form>
+                <div class="modal-body">
+
                     <div class="form-group">
                         <label>Name</label>
                         <div class="form-group ">
@@ -127,15 +127,17 @@
                     </div>
 
                     {{--<div class="form-group">--}}
-                        {{--<label>Address</label>--}}
-                        {{--<textarea class="form-control" rows="3" cols="5" required></textarea>--}}
+                    {{--<label>Address</label>--}}
+                    {{--<textarea class="form-control" rows="3" cols="5" required></textarea>--}}
                     {{--</div>--}}
 
+
+                </div>
+
+                <div class="modal-footer">
                     <button type="submit" class="btn btn-primary float-right">Add Agent</button>
-                </form>
-            </div>
+                </div>
             </form>
-            <div class="modal-footer">  </div>
         </div>
     </div>
 </div>
@@ -150,17 +152,25 @@
 <script src="{{asset('js/wow.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
 <script>
-    function checkScroll(){
-        if(window.scrollY>150){
-           const  item =  document.querySelector('.homeCart');
-                item.classList.add('take_position');
+    function checkScroll() {
+        if (window.scrollY > 150) {
+            const item = document.querySelector('.homeCart');
+            item.classList.add('take_position');
         }
-        if(window.scrollY<150){
-            const  removeitem =  document.querySelector('.homeCart');
+        if (window.scrollY < 150) {
+            const removeitem = document.querySelector('.homeCart');
             removeitem.classList.remove('take_position');
         }
 
     }
+
+    // let url = window.location.pathname;
+    //
+    // if (url === '/about' || url === '/contact' || url === '/check-order') {
+    //
+    //     document.querySelector('.customToggleCategories').style.display = 'none';
+    //
+    // }
 
 </script>
 

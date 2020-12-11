@@ -7,6 +7,7 @@ $theme-primary: #139200;
 
 .customToggleCategories{
   display: none;
+  text-decoration: none;
   cursor: pointer;
   border: 1px solid #cddc39;
   padding: 4px 11px;
@@ -24,6 +25,13 @@ $theme-primary: #139200;
     }
   }
 
+}
+span.customToggleCategories{
+  @media(max-width: 768px){
+    position: sticky;
+    top: 52px;
+    z-index: 10;
+  }
 }
 
 //.control_menu{
@@ -303,7 +311,7 @@ $theme-primary: #139200;
          align-items: center;
          flex-direction: column;
          .user{
-           margin-top: 18px;
+           margin-top: 7px;
            @media(max-width: 650px) {
              margin-bottom: 4px;
            }
@@ -338,6 +346,9 @@ $theme-primary: #139200;
     .signup{
       text-align: center;
       flex: 1;
+      @media(min-width:769px ){
+        margin-top: -30px;
+      }
       .titleBar{
         article{
           background: #FFFED8;
