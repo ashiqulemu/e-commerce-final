@@ -15,7 +15,7 @@ $theme-primary: #139200;
   background: linear-gradient(-87deg, #d0f500, #f9e819);
   color: #1e1e1e;
   font-weight: 600;
-  @media(max-width:600px){
+  @media(max-width:768px){
     display: block;
     text-transform: capitalize;
     cursor: pointer;
@@ -26,13 +26,13 @@ $theme-primary: #139200;
   }
 
 }
-span.customToggleCategories{
-  @media(max-width: 768px){
-    position: sticky;
-    top: 52px;
-    z-index: 10;
-  }
-}
+//span.customToggleCategories{
+//  @media(max-width: 768px){
+//    position: sticky;
+//    top: 52px;
+//    z-index: 10;
+//  }
+//}
 
 //.control_menu{
 //  @media(min-width:769px ){

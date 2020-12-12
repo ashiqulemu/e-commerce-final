@@ -164,13 +164,16 @@
 
     }
 
-    // let url = window.location.pathname;
-    //
-    // if (url === '/about' || url === '/contact' || url === '/check-order') {
-    //
-    //     document.querySelector('.customToggleCategories').style.display = 'none';
-    //
-    // }
+    let url = window.location.pathname;
+
+    if (url === '/all-products' || url === '/popular-products' || url === '/latest-products') {
+
+        document.querySelector('#allProducts').style.display = 'none';
+
+    }
+    if(url === '/' || url === '/about'|| url === '/check-order'|| url === '/contact' ){
+        document.querySelector('#allCategories').style.display = 'none';
+    }
 
 </script>
 
