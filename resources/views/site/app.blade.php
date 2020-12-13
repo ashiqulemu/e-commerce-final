@@ -154,8 +154,10 @@
 <script>
     function checkScroll() {
         if (window.scrollY > 150) {
-            const item = document.querySelector('.homeCart');
+            const item = document.querySelector('.homeCart,.shoppingCart');
             item.classList.add('take_position');
+
+
         }
         if (window.scrollY < 150) {
             const removeitem = document.querySelector('.homeCart');
@@ -166,12 +168,12 @@
 
     let url = window.location.pathname;
 
-    if (url === '/all-products' || url === '/popular-products' || url === '/latest-products') {
+    if (url === '/all-products' || url === '/popular-products' || url === '/latest-products' ) {
 
         document.querySelector('#allProducts').style.display = 'none';
 
     }
-    if(url === '/' || url === '/about'|| url === '/check-order'|| url === '/contact' ){
+    if(url === '/' || url === '/about'|| url === '/check-order'|| url === '/contact'|| url === '/user-home' ){
         document.querySelector('#allCategories').style.display = 'none';
     }
 

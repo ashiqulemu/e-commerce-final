@@ -780,7 +780,7 @@ html{
 }
 
 .shoppingCart {
-  position: relative;
+
   .counter {
     background: #f5c10a;
     color: #000000 !important;
@@ -799,6 +799,21 @@ html{
     align-items: center !important;
     animation: upDown 1s 3 forwards;
     animation-delay: 3s;
+  }
+  position: relative;
+  &.take_position{
+    position: fixed!important;
+    top: 37%;
+    @media(max-width:768px){
+      top: 19%;
+    }
+    @media(max-width:600px){
+      top: 17%!important;
+    }
+    .counter{
+      top: 12px;
+      left: 28px;
+    }
   }
 }
 

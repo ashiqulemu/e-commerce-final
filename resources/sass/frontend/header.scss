@@ -27,12 +27,12 @@ $theme-primary: #139200;
 
 }
 //span.customToggleCategories{
-//  @media(max-width: 768px){
-//    position: sticky;
-//    top: 52px;
-//    z-index: 10;
-//  }
-//}
+////  @media(max-width: 768px){
+////    position: sticky;
+////    top: 52px;
+////    z-index: 10;
+////  }
+////}
 
 //.control_menu{
 //  @media(min-width:769px ){
@@ -62,6 +62,7 @@ $theme-primary: #139200;
   width: 100%;
 .shoppingCart{
   position: relative;
+
   i{
     font-size: 2rem;
     color: #9ca91b;
@@ -112,6 +113,9 @@ $theme-primary: #139200;
 .loged-header {
   padding: 20px 0;
   background:#70A354;
+  @media(max-width:768px){
+    padding: 10px 0;
+  }
   .header {
     display: flex;
     justify-content: space-between;
